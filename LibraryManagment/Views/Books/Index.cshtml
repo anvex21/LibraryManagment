@@ -1,0 +1,39 @@
+﻿@model BookIndexViewModel
+<h2>Current books</h2>
+<p>
+    <a asp-action="Create">Add a new book</a>
+</p>
+<br />
+<form method="get" asp-action="Index" class="form-inline mb-3">
+    <label for="year" class="mr-2">Filter by Year:</label>
+    <input type="number" name="year" id="year" value="@(Model.FilterYear?.ToString() ?? "")" class="form-control mr-2" placeholder="Enter Year" />
+    <button type="submit" class="btn btn-primary">Filter</button>
+    <a asp-action="Index" class="btn btn-secondary ml-2">Clear</a>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Books[0].Title)</th>
+            <th>@Html.DisplayNameFor(model => model.Books[0].Author)</th>
+            <th>@Html.DisplayNameFor(model => model.Books[0].Year)</th>
+            <th>@Html.DisplayNameFor(model => model.Books[0].Genre)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                <td>@Html.DisplayFor(modelItem => item.Year)</td>
+                <td>@Html.DisplayFor(modelItem => item.Genre)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
