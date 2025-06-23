@@ -45,10 +45,8 @@ In Visual Studio, open the Package Manager Console:
 Tools → NuGet Package Manager → Package Manager Console
 
 Run the following:
-`
-Add-Migration {migrationName}
+`Add-Migration {migrationName}`
 <br>
-Update-Database
-`
+`Update-Database`
 
 ▶️ Run the Application using F5
