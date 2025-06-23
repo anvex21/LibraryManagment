@@ -46,7 +46,9 @@ Tools → NuGet Package Manager → Package Manager Console
 
 Run the following:
 `
-Add-Migration InitialCreate
+Add-Migration {migrationName}
+'
+'
 Update-Database
 `
 
