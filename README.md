@@ -44,7 +44,7 @@ Create and Apply Migrations (if not already applied)
 In Visual Studio, open the Package Manager Console:
 Tools → NuGet Package Manager → Package Manager Console
 
-Run the following:
+Run the following: <br>
 `Add-Migration {migrationName}`
 <br>
 `Update-Database`
